@@ -7,7 +7,7 @@
 
 <style>
 :root {
-  --red: #A61B29;
+  --red: #C04851;
   --gold: #D4AF37;
   --cream: #F8F1E6;
   --ink: #2B2118;
@@ -25,6 +25,33 @@ body {
   background: var(--cream);
   color: var(--ink);
   line-height: 1.8;
+}
+.slide{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+transition:1s;
+background-size:cover;
+background-position:center;
+}
+
+.slide:nth-child(1){
+background-image:url("1.jpg");
+}
+
+.slide:nth-child(2){
+background-image:url("2.jpg");
+}
+
+.slide:nth-child(3){
+background-image:url("3.jpg");
+}
+
+.slide.active{
+opacity:1;
 }
 
 a {
@@ -51,8 +78,8 @@ header {
 }
 
 .logo img{
-  height:40px;
-  width:auto;
+  height:60px;
+  max width:100%;
   font-size: 28px;
   font-weight: bold;
   color: var(--gold);
@@ -76,7 +103,6 @@ header {
 
 .hero {
   min-height: 90vh;
-  background:url(BANNER.jpeg);
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -361,18 +387,13 @@ footer span {
       <li><a href="#media">影音专区</a></li>
       <li><a href="#books">书籍专区</a></li>
       <li><a href="#contact">联系我们</a></li>
+      <li>
+      <img src="logo3.png" class="top-icon">
+      </li>
+      
     </ul>
   </nav>
 </header>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>安乐之行 教育推广中心</h1>
-    <p>净心自在 岁月静好</p>
-    <a href="#about" class="btn">了解更多</a>
-  </div>
-</section>
-
 <section class="about" id="about">
   <div class="container">
     <div class="section-title">
@@ -382,13 +403,18 @@ footer span {
 
     <div class="about-content">
       <div>
-        <h3>庄严道场 · 慈悲弘法</h3>
+        <h3>关于老师</h3>
         <p>
-          宗旨:
-          (一) 弘揚正信佛教，推动净土法门, 凈化人心，塑造人间乐土。
-          (二) 提倡佛教生活文化，以提升个人修行、促进家庭和谐，建立祥和中庸的多元社会。
-          (三) 提供学佛修法道场，听闻正法，开启智慧，自度度他，积累福德。
-          （四) 推动社会人文建设与慈善关怀
+          王蕰老師，一位深諳古典美学的艺术创作者；一位古董艺术收藏家；一位雅好品茗
+的茶艺家，曾是台湾早期开创茶艺文化先进之一，共创立三家当代茶艺文化中心的
+品茗家；一位精通天文历算、陰陽數術的追求者，精通及了解各類失傳的命理占卜
+之學，包括《易經》、占星學、塔羅牌占卜和奇門遁甲，還有各類卜算法……；一
+位修學各路門派武學的功夫愛好者，從 14 歲起追隨道家師父修學形意、八卦、太
+極拳、螳螂拳、鶴拳、少林彈腿、槍、棍、流星錘……各家流派武學；一位致力保
+存傳統音樂薪傳的倡導者，創辦國樂-樂府雅韻和南管樂社-梵音雅集。為了承續宇
+宙繼起生命，有使命地開辦創立了許多機構，包含：中國人文生命科學協會、轉化
+創意工作室有限公司、生命力文創教育基金會、中華度眾協會、薄伽梵有限公司，
+以及拾慧文化創意有限公司。
         </p>
         <p>
           网站内容涵盖读书会《观音，最具丈夫相的女性》，佛法讲堂：安乐之路-通往净土资粮，慈善公益，文化推广，环保教育，佛学教育，线上共修     </p>
@@ -415,7 +441,11 @@ footer span {
 
     <div class="cards">
       <div class="card">
-        <h3>共修法会</h3>
+        <h3>佛学教育</h3>
+        <h3>慈善公益</h3>
+        <h3>文化推广</h3>
+        <h3>环保教育</h3>
+        <h3>与茶会友</h3>
       </div>
     </div>
   </div>
