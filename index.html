@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>佛教文化网站</title>
+
+<style>
+:root {
+  --red: #8C1D18;
+  --gold: #C9A227;
+  --cream: #F8F1E6;
+  --ink: #2B2118;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: var(--red);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  color: var(--white);
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 90vh;
+  background:
+    linear-gradient(rgba(140,29,24,0.82), rgba(43,33,24,0.8)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 56px;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 6px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--red);
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--white);
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 25px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.about {
+  background: var(--white);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-box {
+  border-left: 6px solid var(--gold);
+  padding: 30px;
+  background: var(--cream);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: var(--white);
+  padding: 35px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--gold);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: var(--red);
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.media {
+  background: var(--red);
+  color: var(--white);
+}
+
+.media .section-title h2 {
+  color: var(--gold);
+}
+
+.video-box {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--gold);
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.video-placeholder {
+  height: 280px;
+  border: 2px dashed var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.books {
+  background: var(--cream);
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.book {
+  background: var(--white);
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgba(201,162,39,0.4);
+}
+
+.book-icon {
+  font-size: 48px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.contact {
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info {
+  background: var(--red);
+  color: var(--white);
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.contact-info h3 {
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+form {
+  background: var(--cream);
+  padding: 40px;
+  border-radius: 18px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+textarea {
+  height: 130px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--red);
+  color: var(--gold);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--ink);
+  color: var(--white);
+  text-align: center;
+  padding: 35px 20px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .about-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .book-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .cards,
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">佛光禅院</div>
+    <ul>
+      <li><a href="#home">首页</a></li>
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#events">活动专区</a></li>
+      <li><a href="#media">影音专区</a></li>
+      <li><a href="#books">书籍专区</a></li>
+      <li><a href="#contact">联系我们</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>愿以慈悲光明 照见清净本心</h1>
+    <p>弘扬正信佛法，传递慈悲智慧，建设庄严清净的东方禅意佛教文化平台。</p>
+    <a href="#about" class="btn">了解更多</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>关于我们</h2>
+      <span>ABOUT US</span>
+    </div>
+
+    <div class="about-content">
+      <div>
+        <h3>庄严道场 · 慈悲弘法</h3>
+        <p>
+          佛光禅院以弘扬正信佛教文化为宗旨，致力于传播佛陀慈悲、智慧、清净、和平的教法。
+          我们希望通过线上平台，让更多大众接触佛法、学习佛法、实践佛法。
+        </p>
+        <p>
+          网站内容涵盖佛法开示、共修活动、佛教影音、经典书籍、禅修资讯与大众交流。
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>我们的愿景</h3>
+        <p>
+          以清净心服务大众，以慈悲心利益有情，以智慧光明照亮人生道路。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="container">
+    <div class="section-title">
+      <h2>活动专区</h2>
+      <span>DHARMA EVENTS</span>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>共修法会</h3>
+        <p>定期举办诵经、礼佛、供灯、祈福、回向等共修活动。</p>
+      </div>
+
+      <div class="card">
+        <h3>禅修课程</h3>
+        <p>引导大众学习静坐、观心、正念与日常修行方法。</p>
+      </div>
+
+      <div class="card">
+        <h3>佛学讲座</h3>
+        <p>邀请法师与善知识讲解佛教经典、因果、慈悲与智慧。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="media" id="media">
+  <div class="container">
+    <div class="section-title">
+      <h2>影音专区</h2>
+      <span>MEDIA CENTER</span>
+    </div>
+
+    <div class="video-box">
+      <div class="video-placeholder">
+        佛法开示影片区域
+      </div>
+      <h3>慈悲与智慧的修行之道</h3>
+      <p>这里可放置 YouTube、佛法开示、法会直播、诵经音频等内容。</p>
+    </div>
+  </div>
+</section>
+
+<section class="books" id="books">
+  <div class="container">
+    <div class="section-title">
+      <h2>书籍专区</h2>
+      <span>DHARMA BOOKS</span>
+    </div>
+
+    <div class="book-list">
+      <div class="book">
+        <div class="book-icon">📖</div>
+        <h3>佛学入门</h3>
+        <p>适合初学者了解佛教基础。</p>
+      </div>
+
+      <div class="book">
+        <div class="book-icon">📿</div>
+        <h3>经典导读</h3>
+        <p>介绍重要佛经与修行意义。</p>
+      </div>
+
+      <div class="book">
+        <div class="book-icon">🪷</div>
+        <h3>禅修手册</h3>
+        <p>学习正念、止观与日常用功。</p>
+      </div>
+
+      <div class="book">
+        <div class="book-icon">🕯️</div>
+        <h3>祈愿文集</h3>
+        <p>收录常用祈愿、回向与赞颂文。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>联系我们</h2>
+      <span>CONTACT US</span>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>佛光禅院</h3>
+        <p>地址：马来西亚 槟城</p>
+        <p>电话：+60 12-345 6789</p>
+        <p>邮箱：info@buddhist-temple.com</p>
+        <p>开放时间：每日 9:00 AM - 6:00 PM</p>
+      </div>
+
+      <form>
+        <input type="text" placeholder="您的姓名" required />
+        <input type="email" placeholder="您的邮箱" required />
+        <input type="text" placeholder="主题" />
+        <textarea placeholder="留言内容"></textarea>
+        <button type="submit">提交留言</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>佛光禅院</span> 版权所有 · 愿一切众生离苦得乐</p>
+</footer>
+
+</body>
+</html>
