@@ -26,6 +26,32 @@ body {
   color: var(--ink);
   line-height: 1.8;
 }
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:25px;
+}
+
+.event-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  padding-bottom:25px;
+  text-align:center;
+}
+
+.event-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.event-card h3{
+  color:#8C1D18;
+  font-size:26px;
+  margin:22px 0;
+}
 .slide{
 position:absolute;
 top:0;
@@ -484,8 +510,43 @@ footer span {
   <div class="container">
     <div class="section-title">
       <h2>活动专区</h2>
-      <span>DHARMA EVENTS</span>
+      <section class="events" id="events">
+  <div class="section-title">
+    <h2>活动专区</h2>
+    <span>DHARMA EVENTS</span>
+  </div>
+
+  <div class="event-grid">
+
+    <div class="event-card">
+      <img src="e1.jpg" alt="佛学教育">
+      <h3>佛学教育</h3>
+      <a href="你的书籍链接" class="book-btn" target="_blank">📖 阅读书籍</a>
     </div>
+
+    <div class="event-card">
+      <img src="e2.jpg" alt="慈善公益">
+      <h3>慈善公益</h3>
+    </div>
+
+    <div class="event-card">
+      <img src="e3.jpg" alt="文化推广">
+      <h3>文化推广</h3>
+    </div>
+
+    <div class="event-card">
+      <img src="e4.jpg" alt="环保教育">
+      <h3>环保教育</h3>
+    </div>
+
+    <div class="event-card">
+      <img src="e5.jpg" alt="与茶会友">
+      <h3>与茶会友</h3>
+      <a href="你的YouTube链接" class="youtube-btn" target="_blank">▶ 观看影片</a>
+    </div>
+
+  </div>
+</section>
 
     <div class="cards">
       <div class="card">
