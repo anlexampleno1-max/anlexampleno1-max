@@ -110,27 +110,16 @@ header {
     filter:drop-shadow(0 0 8px rgba(255,255,255,0.47));
 }
 .nav ul{
-    display:flex !important;
-    flex-direction:row !important;
-    list-style:none !important;
-    gap:30px !important;
-    margin:0 !important;
-    padding:0 !important;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
 }
 
-.nav li{
-    list-style:none !important;
-}
-
-.nav{
-    display:flex !important;
-    justify-content:space-between !important;
-    align-items:center !important;
-}
-
-.nav a {
-  color: var(--white);
-  font-size: 16px;
+.nav a{
+    font-size:14px;
+    white-space:nowrap;
 }
 
 .nav a:hover {
