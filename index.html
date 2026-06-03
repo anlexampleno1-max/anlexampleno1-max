@@ -116,13 +116,22 @@ color:var(--gold);
 letter-spacing:3px;
 }
 .nav ul{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    list-style:none;
-    gap:30px;
-    margin:0;
-    padding:0;
+    display:flex !important;
+    flex-direction:row !important;
+    list-style:none !important;
+    gap:30px !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.nav li{
+    list-style:none !important;
+}
+
+.nav{
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
 }
 
 .nav a {
