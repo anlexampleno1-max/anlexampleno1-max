@@ -104,7 +104,7 @@ header {
 }
 
 .logo img{
-    height:90px;
+    height:60px;
     width:auto;
     max-width:100%;
     filter:drop-shadow(0 0 8px rgba(255,255,255,0.47));
@@ -388,17 +388,19 @@ footer span {
 }
 
 @media (max-width: 900px) {
-  .nav {
-    flex-direction: column;
-    gap: 18px;
-  }
 
-  .nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-
+.nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+ .nav ul{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    gap:20px;
+    list-style:none;
+}
   .hero h1 {
     font-size: 38px;
   }
