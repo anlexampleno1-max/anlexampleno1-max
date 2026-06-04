@@ -208,6 +208,14 @@ header {
         font-size:20px;
         white-space:nowrap;
     }
+
+.nav li:last-child{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+}
+  
 }
 .hero {
     min-height: 90vh;
@@ -571,10 +579,10 @@ footer span {
       <li><a href="#events">活动专区</a></li>
       <li><a href="#media">影音专区</a></li>
       <li><a href="#books">书籍专区</a></li>
-      <li><a href="#contact">联系我们</a></li>
-      <li class="search-icon">
-         <a href="javascript:void(0);" onclick="toggleSearch()">🔎</a>
-      </li>
+      <li class="contact-search">
+        <a href="#contact">联系我们</a>
+        <a href="javascript:void(0);" onclick="toggleSearch()">🔎</a></li>
+
     </ul>
   </nav>
 </header>
