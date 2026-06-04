@@ -540,16 +540,22 @@ footer span {
 
 @media (min-width:769px){
 
-    .contact-search{
-        display:flex !important;
-        align-items:center !important;
-        gap:8px !important;
-    }
+.contact-search{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    white-space:nowrap !important;
+    gap:8px !important;
+}
 
-    .contact-search a{
-        display:inline-block !important;
-    }
+.contact-search a{
+    display:inline-block !important;
+}
 
+.contact-search a:first-child{
+    margin-right:8px;
+}
 }
   
 .search-container{
