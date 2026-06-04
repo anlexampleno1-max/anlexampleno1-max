@@ -529,6 +529,28 @@ footer span {
         margin-top:15px;
     }
 }
+
+.search-container{
+    display:none;
+    text-align:center;
+    padding:15px;
+    background:#2b241c;
+}
+
+.search-container.active{
+    display:block;
+}
+
+.search-container input{
+    width:90%;
+    max-width:500px;
+    padding:12px 20px;
+    border-radius:30px;
+    border:2px solid #C9A227;
+    font-size:16px;
+    outline:none;
+}
+  
 </style>
 </head>
 
@@ -550,9 +572,19 @@ footer span {
       <li><a href="#media">影音专区</a></li>
       <li><a href="#books">书籍专区</a></li>
       <li><a href="#contact">联系我们</a></li>
+      <li class="search-icon">
+         <a href="javascript:void(0);" onclick="toggleSearch()">🔎</a>
+      </li>
     </ul>
   </nav>
 </header>
+<div id="search-container" class="search-container">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="搜索网站内容..."
+    >
+</div>
 <section class="hero" id="home">
   
 <div class="slide active"
@@ -723,6 +755,13 @@ style="background-image:url('6.png')">
   <p>© 2026 <span>安乐之行教育推广中心</span> 版权所有 · 愿一切众生离苦得乐</p>
 </footer>
 <script>
+
+function toggleSearch(){
+    document
+        .getElementById("search-container")
+        .classList
+        .toggle("active");
+}
 
 const slides = document.querySelectorAll('.slide');
 
