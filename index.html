@@ -465,17 +465,20 @@ footer span {
 
 @media (max-width: 900px) {
 
-.nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.nav{
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
 }
- .nav ul{
-    display:flex;
-    flex-direction:row !important;
-    flex-wrap:nowrap;
-    gap:20px;
-    list-style:none;
+.nav ul{
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:repeat(3, auto) !important;
+  justify-content:center !important;
+  gap:12px 22px !important;
+  list-style:none !important;
+  padding:0 !important;
+  margin:20px 0 0 !important;
 }
   .hero h1 {
     font-size: 38px;
