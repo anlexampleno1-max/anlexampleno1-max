@@ -162,6 +162,10 @@ header {
 }
   
 @media (max-width: 768px){
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:none;
+}
     .nav{
     flex-direction:column !important;
     align-items:center !important;
@@ -223,6 +227,37 @@ header {
     width:auto;
     text-align:center;
 }
+  
+.mobile-menu-btn{
+    display:block !important;
+    position:absolute;
+    top:15px;
+    left:15px;
+    font-size:30px;
+    background:none;
+    border:none;
+    color:#d4af37;
+    z-index:9999;
+}
+
+.mobile-search-btn{
+    display:block !important;
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:24px;
+    text-decoration:none;
+    z-index:9999;
+}
+
+#mobileMenu{
+    display:none !important;
+}
+
+#mobileMenu.show{
+    display:block !important;
+}
+  
 }
   
 .hero {
@@ -568,6 +603,11 @@ footer span {
 }
 }
   
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:none;
+}  
+  
 .search-container{
     display:none;
     text-align:center;
@@ -603,13 +643,22 @@ footer span {
 
     <img src="LOGO R1.png" class="logo-right">
 </div>
-    <ul>
+    
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+
+<a class="mobile-search-btn"
+href="javascript:void(0);"
+onclick="toggleSearch()">🔎</a>
+
+<ul id="mobileMenu">
+    
       <li><a href="#home">首页</a></li>
       <li><a href="#news">最新动态</a></li>
       <li><a href="#about">关于我们</a></li>
       <li><a href="#events">活动专区</a></li>
       <li><a href="#media">影音专区</a></li>
       <li><a href="#books">书籍专区</a></li>
+  
       <li class="contact-search">
         <a href="#contact">联系我们</a>
         <a href="javascript:void(0);" onclick="toggleSearch()">🔎</a></li>
@@ -818,6 +867,12 @@ slides[current].classList.remove('active');
 
 }, 5000);
 
+function toggleMobileMenu(){
+    document
+        .getElementById("mobileMenu")
+        .classList.toggle("show");
+}
+  
 </script>
 </body>
 </html>
