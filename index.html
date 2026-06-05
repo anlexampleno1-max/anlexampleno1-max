@@ -160,11 +160,17 @@ header {
     height:120px;
     width:auto;
 }
-  
-@media (max-width: 768px){
+
 .mobile-menu-btn,
 .mobile-search-btn{
-    display:none;
+    display:none!important;
+}
+  
+@media (max-width: 768px){
+  
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:block!important;
 }
     .nav{
     flex-direction:column !important;
