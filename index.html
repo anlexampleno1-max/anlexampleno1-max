@@ -199,17 +199,9 @@ header {
 
 .nav ul{
     width:100% !important;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center !important;
-    gap:4px 4px !important;
-}
-
-.nav li{
-    flex:0 0 25% !important;
-    max-width:25% !important;
-    width:25% !important;
-    text-align:center !important;
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
   
     .nav a{
@@ -217,14 +209,16 @@ header {
         white-space:nowrap;
     }
 
+.nav li:last-child{
+    display:flex !important;
     align-items:center !important;
     justify-content:center !important;
     gap:3px !important;
     width:auto;
     text-align:center;
 }
-  
 }
+  
 .hero {
     min-height: 90vh;
     position: relative;
