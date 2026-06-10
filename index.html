@@ -354,6 +354,40 @@ header {
   margin-bottom: 35px;
 }
 
+.slide-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:100;
+    background:rgba(0,0,0,0.4);
+    color:#fff;
+    border:none;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:24px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.more-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:#C9A227;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+  
 .btn{
     ...
 }
@@ -826,6 +860,7 @@ style="background-image:url('4.png')">
     <div class="hero-content">
         <h1>净心自在 岁月静好</h1>
         <p>吾人内心存在着一片真心 就是《楞严经》的核心</p>
+        <a href="#news" class="more-btn">观看更多</a>
     </div>
 </div>
 
@@ -834,6 +869,7 @@ style="background-image:url('5.png')">
     <div class="hero-content">
         <h1>闻其名号 信心欢喜</h1>
         <p>一心正念直来 南无阿弥陀佛</p>
+        <a href="#news" class="more-btn">观看更多</a>
     </div>
 </div>
 
@@ -842,8 +878,13 @@ style="background-image:url('6.png')">
     <div class="hero-content">
         <h1>疗愈你的人 就是你自己</h1>
         <p>上天对人们最大的恩典 来自于在给他悲创的同时 也给与了微笑</p>
+        <a href="#news" class="more-btn">观看更多</a>
     </div>
 </div>
+
+<button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+
+<button class="slide-btn next" onclick="changeSlide(1)">❯</button>
   
 </section>
 
@@ -878,21 +919,24 @@ function toggleSearch(){
 }
 
 const slides = document.querySelectorAll('.slide');
-
 let current = 0;
 
+function showSlide(index){
+    slides[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+}
+
+function changeSlide(direction){
+    showSlide(current + direction);
+}
+
 setInterval(() => {
-  const next = (current + 1) % slides.length;
-
-  slides[next].classList.add('active');
-
-  setTimeout(() => {
-slides[current].classList.remove('active');
-    current = next;
-  }, 1000);
-
+    changeSlide(1);
 }, 5000);
-
+  
 function toggleMobileMenu(){
     document
         .getElementById("mobileMenu")
