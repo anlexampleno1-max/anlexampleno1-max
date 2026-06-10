@@ -881,6 +881,33 @@ footer span {
     margin-top:8px !important;
 }
 
+.home-feature-cards{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:center !important;
+    align-items:flex-start !important;
+    gap:30px !important;
+    max-width:1000px !important;
+    margin:40px auto !important;
+}
+
+.home-feature-cards .feature-card{
+    flex:1 !important;
+    width:auto !important;
+    max-width:450px !important;
+    text-align:center !important;
+}
+
+@media(max-width:768px){
+    .home-feature-cards{
+        gap:10px !important;
+    }
+
+    .home-feature-cards .feature-card{
+        width:50% !important;
+    }
+}
+  
 </style>
 </head>
 
