@@ -359,18 +359,16 @@ header {
     top:50%;
     transform:translateY(-50%);
 
-    width:60px;
-    height:60px;
-
+    background:none;
     border:none;
-    border-radius:50%;
 
-    background:rgba(201,162,39,0.75);
+    width:auto;
+    height:auto;
 
-    backdrop-filter:blur(10px);
+    color:rgba(255,255,255,0.85);
 
-    color:white;
-    font-size:28px;
+    font-size:70px;
+    font-weight:200;
 
     cursor:pointer;
 
@@ -380,8 +378,16 @@ header {
 }
 
 .slide-btn:hover{
-    background:#C9A227;
+    color:#ffffff;
     transform:translateY(-50%) scale(1.1);
+}
+
+.prev{
+    left:25px;
+}
+
+.next{
+    right:25px;
 }
 
 .prev{
@@ -958,9 +964,9 @@ style="background-image:url('6.png')">
     </div>
 </div>
 
-<button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+<button class="slide-btn prev" onclick="changeSlide(-1)">‹</button>
 
-<button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+<button class="slide-btn next" onclick="changeSlide(1)">›</button>
   
 </section>
   
