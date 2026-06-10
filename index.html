@@ -911,7 +911,7 @@ style="background-image:url('4.png')">
         <p>吾人内心存在着一片真心 就是《楞严经》的核心</p>
         <a href="javascript:void(0)"
    class="more-btn"
-   onclick="openVideo()">
+   onclick="openVideo('ehd6AjlQM18')">
    观看更多
 </a>
     </div>
@@ -924,7 +924,7 @@ style="background-image:url('5.png')">
         <p>一心正念直来 南无阿弥陀佛</p>
         <a href="javascript:void(0)"
    class="more-btn"
-   onclick="openVideo()">
+   onclick="openVideo('C4nx24a1uUM')">
    观看更多
 </a>
     </div>
@@ -937,7 +937,7 @@ style="background-image:url('6.png')">
         <p>上天对人们最大的恩典 来自于在给他悲创的同时 也给与了微笑</p>
         <a href="javascript:void(0)"
    class="more-btn"
-   onclick="openVideo()">
+   onclick="openVideo('WR5_4rLqU8U')">
    观看更多
 </a>
     </div>
@@ -996,8 +996,8 @@ function openVideo(){
 
     document.getElementById("videoModal").style.display="flex";
 
-    document.getElementById("youtubeFrame").src=
-    "https://www.youtube.com/embed/ehd6AjlQM18?autoplay=1";
+    document.getElementById("youtubeFrame").src =
+    "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
 }
 
 function closeVideo(){
