@@ -503,6 +503,44 @@ section {
   text-align: center;
 }
 
+.video-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+}
+
+#videoModal .video-box{
+    width:90%;
+    max-width:900px;
+    position:relative;
+    background:none;
+    border:none;
+    padding:0;
+}
+
+#videoModal iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:none;
+    border-radius:12px;
+}
+
+.close-video{
+    position:absolute;
+    top:-40px;
+    right:0;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+}
+  
 .video-placeholder {
   height: 280px;
   border: 2px dashed var(--gold);
@@ -871,7 +909,11 @@ style="background-image:url('4.png')">
     <div class="hero-content">
         <h1>净心自在 岁月静好</h1>
         <p>吾人内心存在着一片真心 就是《楞严经》的核心</p>
-        <a href="#news" class="more-btn">观看更多</a>
+        <a href="javascript:void(0)"
+   class="more-btn"
+   onclick="openVideo()">
+   观看更多
+</a>
     </div>
 </div>
 
@@ -880,7 +922,11 @@ style="background-image:url('5.png')">
     <div class="hero-content">
         <h1>闻其名号 信心欢喜</h1>
         <p>一心正念直来 南无阿弥陀佛</p>
-        <a href="#news" class="more-btn">观看更多</a>
+        <a href="javascript:void(0)"
+   class="more-btn"
+   onclick="openVideo()">
+   观看更多
+</a>
     </div>
 </div>
 
@@ -889,7 +935,11 @@ style="background-image:url('6.png')">
     <div class="hero-content">
         <h1>疗愈你的人 就是你自己</h1>
         <p>上天对人们最大的恩典 来自于在给他悲创的同时 也给与了微笑</p>
-        <a href="#news" class="more-btn">观看更多</a>
+        <a href="javascript:void(0)"
+   class="more-btn"
+   onclick="openVideo()">
+   观看更多
+</a>
     </div>
 </div>
 
@@ -898,7 +948,27 @@ style="background-image:url('6.png')">
 <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
   
 </section>
+  
+<div id="videoModal" class="video-modal">
 
+    <div class="video-box">
+
+        <span class="close-video"
+              onclick="closeVideo()">
+              ✕
+        </span>
+
+        <iframe
+            id="youtubeFrame"
+            src=""
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+  
 <section class="home-feature-cards">
 
     <div class="feature-card">
@@ -921,7 +991,22 @@ style="background-image:url('6.png')">
   <p>© 2026 <span>安乐之行教育推广中心</span> 版权所有 · 愿一切众生离苦得乐</p>
 </footer>
 <script>
+  
+function openVideo(){
 
+    document.getElementById("videoModal").style.display="flex";
+
+    document.getElementById("youtubeFrame").src=
+    "https://www.youtube.com/embed/ehd6AjlQM18?autoplay=1";
+}
+
+function closeVideo(){
+
+    document.getElementById("videoModal").style.display="none";
+
+    document.getElementById("youtubeFrame").src="";
+}
+  
 function toggleSearch(){
     document
         .getElementById("search-container")
