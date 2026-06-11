@@ -1,0 +1,15 @@
+{
+  "name": "安乐之行",
+  "short_name": "安乐之行",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081a45",
+  "theme_color": "#081a45",
+  "icons": [
+    {
+      "src": "logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
