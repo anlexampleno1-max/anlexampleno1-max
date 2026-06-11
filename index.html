@@ -375,6 +375,26 @@ header {
     transition:0.3s;
 
     z-index:100;
+
+    display:none !important;
+  }
+
+.banner-dots{
+    display:none;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:rgba(255,255,255,.5);
+    display:block;
+}
+
+.dot.active{
+    background:#C9A227;
+}
+  
 }
 
 .slide-btn:hover{
@@ -1006,6 +1026,12 @@ style="background-image:url('6.png')">
 <button class="slide-btn prev" onclick="changeSlide(-1)">‹</button>
 
 <button class="slide-btn next" onclick="changeSlide(1)">›</button>
+
+<div class="banner-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
   
 </section>
   
