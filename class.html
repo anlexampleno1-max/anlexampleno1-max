@@ -31,9 +31,11 @@ body {
   overflow-x: hidden;
 }
 .event-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    max-width:1400px;
+    margin:40px auto;
 }
 
 .event-card{
@@ -86,12 +88,27 @@ body {
 
 .event-image{
     width:100%;
-    height:220px;
+    max-width:760px;
+    height:180px;
     object-fit:cover;
-    border-radius:10px;
-    margin-bottom:15px;
+    border-radius:14px;
+    display:block;
+    margin:0 auto 25px auto;
 }
 
+@media (max-width:768px){
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .event-image{
+        width:90%;
+        height:210px;
+        border-radius:14px;
+        margin:25px auto 25px auto;
+    }
+}
+  
 .register-btn:hover{
     background:#C9A227;
     color:#2b241c !important;
@@ -797,6 +814,9 @@ onclick="toggleSearch()">🔎</a>
     </ul>
   </nav>
 </header>
+
+ <div class="event-grid">
+  
  <div class="event-info">
 
         <img src="anleclass.jpg"
@@ -811,6 +831,7 @@ onclick="toggleSearch()">🔎</a>
         <a href="https://meet.google.com/wmu-mvrh-dib" class="register-btn" target="_blank">
         立即参与
         </a>
+      </div>
  <div class="event-info">
 
         <img src="guanyin.jpg"
