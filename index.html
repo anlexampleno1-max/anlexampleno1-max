@@ -934,6 +934,30 @@ footer span {
     .home-feature-cards .feature-card{
         width:50% !important;
     }
+
+.slide-btn{
+    display:block !important;
+    position:absolute !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    z-index:9999 !important;
+    color:#C9A227 !important;
+    font-size:70px !important;
+}
+
+.slide-btn.prev{
+    left:25px !important;
+}
+
+.slide-btn.next{
+    right:25px !important;
+}
+
+@media (max-width:768px){
+    .slide-btn{
+        display:none !important;
+    }
+  
 }
   
 </style>
