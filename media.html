@@ -784,6 +784,33 @@ footer span {
     font-weight:normal;
 }
 
+.sub-video summary{
+    list-style:none;
+    cursor:pointer;
+}
+
+.sub-video summary::-webkit-details-marker{
+    display:none;
+}
+
+.sub-video-list{
+    width:82%;
+    max-width:420px;
+    margin:8px auto 15px;
+}
+
+.sub-video-list a{
+    display:block;
+    text-align:left;
+    padding:10px 18px;
+    margin:6px 0;
+    background:#fffaf0;
+    color:#8C1D18;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:15px;
+}
+  
 @media(max-width:768px){
     .video-item{
         font-size:15px;
@@ -857,25 +884,67 @@ onclick="toggleSearch()">🔎</a>
 
     <div class="video-list">
 
-        <a href="这里放大士感应篇Playlist链接" target="_blank" class="video-item">
-            📖 大士感应篇 <span>14集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 太上感应篇 <span>14集</span>
+    </summary>
 
-        <a href="这里放有声书Playlist链接" target="_blank" class="video-item">
-            🎧 有声书 <span>13集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/playlist?list=PLh6liuCLZnQAY9cx2DKnhNC7tALSD5OZQ" target="_blank">• 太上感应篇</a>
+        
+    </div>
+</details>
 
-        <a href="楞严经Playlist链接" target="_blank" class="video-item">
-            🎧 楞严经 <span>4集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 有声书 <span>13集</span>
+    </summary>
 
-        <a href="这里放恭诵圣号Playlist链接" target="_blank" class="video-item">
-            🔔 恭诵圣号／梵音 <span>4集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://youtube.com/playlist?list=PLh6liuCLZnQBic0e9CzIL2Kon87EWLSPp&si=AV5E6Ua4t76pzMO_" target="_blank">• 有声书</a>
+        
+    </div>
+</details>
 
-        <a href="这里放书籍介绍Playlist链接" target="_blank" class="video-item">
-            📚 书籍介绍 <span>8集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 楞严经 <span>5集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://youtube.com/playlist?list=PLh6liuCLZnQAVwQuIAAB1zjf-FB-bBeYl&si=2dptfQcJxT79oidc" target="_blank">• 楞嚴經蠡測</a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 恭颂圣号/梵音 <span>4集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/playlist?list=PLh6liuCLZnQDMHwd6paO5r399hMvz4Udj" target="_blank">• 恭颂圣号/梵音</a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 书籍介绍 <span>4集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=1e_ftUBjvM0&list=PLh6liuCLZnQAYvBfykEt4Az1CjHH8S-87&index=12" target="_blank">• 現代人的藥師經</a>
+        <a href="https://www.youtube.com/watch?v=EXsfsqO5Usk&list=PLh6liuCLZnQAYvBfykEt4Az1CjHH8S-87&index=15" target="_blank">• 隱藏在心經背後的故事</a>
+        <a href="https://www.youtube.com/watch?v=3wXI1KBlAUM&list=PLh6liuCLZnQAYvBfykEt4Az1CjHH8S-87&index=14">• 這，也是金剛經的重點</a>
+        <a href="https://www.youtube.com/watch?v=mbkMg8ueXf0&list=PLh6liuCLZnQAYvBfykEt4Az1CjHH8S-87&index=13">• 觀音—最具丈夫相的女性</a>
+        <a href="https://www.youtube.com/watch?v=Tyg4q63yQ5I&list=PLh6liuCLZnQAYvBfykEt4Az1CjHH8S-87&index=11" target="_blank">• 如何不落中陰：生死自在</a>
+        <a href="https://youtu.be/Vco3G-JMkR8?si=agbc7MpFBspQ2qCd">• 拴马绳</a>
+        <a href="https://www.youtube.com/watch?v=l7ooYUpuvno&list=PLh6liuCLZnQDSoVl1jrnz4vUNr8C6skbE&index=2" target="_blank">• 《師者》【第壹冊】</a>
+        <a href="https://www.youtube.com/watch?v=SFKjGu-czhM&list=PLh6liuCLZnQDSoVl1jrnz4vUNr8C6skbE&index=5&t=2s" target="_blank">• 《師者》【第貳冊</a>
+        
+    </div>
+</details>
 
     </div>
 
@@ -883,21 +952,56 @@ onclick="toggleSearch()">🔎</a>
 
     <div class="video-list">
 
-        <a href="这里放大士感应篇Playlist链接" target="_blank" class="video-item">
-            📖 上班族必看 <span>4集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 上班族必看 <span>4集</span>
+    </summary>
 
-        <a href="这里放有声书Playlist链接" target="_blank" class="video-item">
-            🎧 静坐与养生之间 <span>7集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://youtu.be/eusjvdBuVCE?si=6GMY34G21IxYWvju" target="_blank">• 紓解疲憊、無力感，簡單動作推一推</a>
+        <a href="https://youtu.be/v8iJTMMGEQ4?si=F-kjHZWR85RDWquj" target="_blank">• 站樁五分鐘，讓你精神更健康（教學示範） </a>
+        <a href="https://youtu.be/GPMBkRxiB14?si=WnuXIvosflJJZURW" target="_blank">• 每天甩手10分鐘，『手麻無力新剋星』</a>
+        <a href="https://youtu.be/SALexwHpP6w?si=D3ycjm25A8uMpGV0" target="_blank">• 久坐腰疼的改善方法，腰酸背疼我有獨家妙招 ！</a>
+        
+    </div>
+</details>
 
-        <a href="楞严经Playlist链接" target="_blank" class="video-item">
-            🎧 静坐之后 <span>9集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 静坐与养生之间 <span>5集</span>
+    </summary>
 
-        <a href="这里放书籍介绍Playlist链接" target="_blank" class="video-item">
-            📚 静坐 -这一档子事 功法功法篇 <span>14集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=y70YIxOxaho&list=PLh6liuCLZnQCYb6QM5q32BmfDJDnlP-te&index=5" target="_blank">• 仙鶴養生功法</a>
+        <a href="https://www.youtube.com/watch?v=qwICgQ-jV3U" target="_blank">• 頭部保養</a>
+        <a href="https://www.youtube.com/watch?v=CffCKasIfxg&list=PLh6liuCLZnQCYb6QM5q32BmfDJDnlP-te&index=23" target="_blank">• 眼睛保養</a>
+        <a href="https://youtu.be/Qxf_JS-Lu3s?si=tMMa9ow6Ljpzmsr1" target="_blank">• 保腸健胃調養功法</a>
+        <a href="https://www.youtube.com/watch?v=p5cZYNaBR-M&list=PLh6liuCLZnQCYb6QM5q32BmfDJDnlP-te&index=20">• 鳴天鼓-增加自己的記憶力，減緩老人痴呆</a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 静坐之后 <span>9集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=BjvxJrtBoLU&list=PLh6liuCLZnQDn8dp1pQiP0X07IfIhNOOH&index=2" target="_blank">• 八段锦</a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 静坐-这一档子事（功法篇） <span>14集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://youtube.com/playlist?list=PLh6liuCLZnQCUYJPB1g2ZA4Qcr_PHb6zf&si=G9HxTUee1AQ_tynX" target="_blank">• 静坐-这一档子事（功法篇）</a>
+        
+    </div>
+</details>
 
     </div>
 
@@ -905,21 +1009,61 @@ onclick="toggleSearch()">🔎</a>
 
     <div class="video-list">
 
-        <a href="这里放大士感应篇Playlist链接" target="_blank" class="video-item">
-            📖 书籍 <span>7集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 书籍介绍 <span>7集</span>
+    </summary>
 
-        <a href="这里放有声书Playlist链接" target="_blank" class="video-item">
-            🎧 國際座談簽書會 <span>4集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=XRwg-1QPTL4&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=3" target="_blank">• 《金句》</a>
+        <a href="https://www.youtube.com/watch?v=MfQXlmqYBZ8&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=3" target="_blank">• 《逆流而上—人生勵志五部曲》</a>
+        <a href="https://www.youtube.com/watch?v=G532fLOch2k&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=9" target="_blank">• 《绝对》</a>
+        <a href="https://www.youtube.com/watch?v=y0L7CHRWWCU&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=10" target="_blank">• 《力量－重生之后》</a>
+        <a href="https://www.youtube.com/watch?v=egtiLbTtHd0&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=11" target="_blank">• 《重生: 生命中都必須有一次》</a>
+        <a href="https://www.youtube.com/watch?v=9CtWDYDD910&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=15" target="_blank">• 《回不去了》</a>
+        <a href="https://www.youtube.com/watch?v=sbGPziHeZSg&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=14" target="_blank">• 《发现生命的曙光》</a>
+    </div>
+</details>
 
-        <a href="楞严经Playlist链接" target="_blank" class="video-item">
-            🎧 Video <span>4集</span>
-        </a>
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 國際座談簽書會 <span>4集</span>
+    </summary>
 
-        <a href="这里放书籍介绍Playlist链接" target="_blank" class="video-item">
-            📚 others <span>2集</span>
-        </a>
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=jt6hcoD6jDA&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=20" target="_blank">• 【自己和自己談話】</a>
+        <a href="https://www.youtube.com/watch?v=4rJDT1IJy8Q&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=17" target="_blank">• 【孔子也有遭遇到十四年來一路碰壁的問題】 </a>
+        <a href="https://www.youtube.com/watch?v=qbYwBMqJveI&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=18" target="_blank">• 【 處理事情的態度：擔當、涵養、氣度、見識 】</a>
+        <a href="https://www.youtube.com/watch?v=zmbnm7VtUrs&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=19" target="_blank">• 【當遭遇到人生難題時的三大要點：面對、解決、處理】</a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 videos <span>4集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=l1FUaNv8b4g&list=PLh6liuCLZnQD1KnyPDaVhDndlC841F-fi" target="_blank">• 心的旅人和灵魂交集（歌）</a>
+        <a href="https://www.youtube.com/watch?v=kamqTmd68kA&list=PLh6liuCLZnQBooFCscnWdWZvqsQWMGDBs" target="_blank">• 《心茶堂》 </a>
+        <a href="https://youtube.com/playlist?list=PLh6liuCLZnQDB6U-MFL3lnohqHDH3mcUP&si=2-gm80Q0WjfVXKUs" target="_blank">• 電台精彩深度專訪</a>
+        <a href="https://www.youtube.com/watch?v=cd8ZpYxCVAY&list=PLh6liuCLZnQArjQW8KmdhraRuaO1yDZrX&index=1" target="_blank">• 如同一顆顆的星子，在王薀老師宛如夜空中明月一般溫暖澄靜的文字裡，得到指引與陪伴...... </a>
+        
+    </div>
+</details>
+
+        <details class="sub-video">
+    <summary class="video-item">
+        📚 others <span>2集</span>
+    </summary>
+
+    <div class="sub-video-list">
+        <a href="https://www.youtube.com/watch?v=U6feSVRSGkg&list=PLh6liuCLZnQD8hZev4G_4cpufd7KUE5-Z" target="_blank">• 王薀老師手抄心經禮盒</a>
+        <a href="https://youtu.be/jKqMuabqAxE?si=_3-bOgr98bCHKjHH" target="_blank">• 音乐专辑 </a>
+           
+    </div>
+</details>
 
     </div>
 
