@@ -756,7 +756,9 @@ footer span {
 }
 
 .video-item{
-    display:block;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     background:#ffffff;
     padding:12px 16px;
     margin:10px auto;
@@ -774,6 +776,12 @@ footer span {
     background:#f7f2e5;
     color:#C9A227;
     transform:translateY(-2px);
+}
+
+.video-item span{
+    font-size:13px;
+    color:#888;
+    font-weight:normal;
 }
 
 @media(max-width:768px){
@@ -846,28 +854,27 @@ onclick="toggleSearch()">🔎</a>
     <div class="video-box">
 
     <h3>📿 佛学系列</h3>
-    <p>佛法开示、有声书、茶堂开示、经典讲解等内容</p>
 
     <div class="video-list">
 
         <a href="这里放大士感应篇Playlist链接" target="_blank" class="video-item">
-            📖 大士感应篇（14）
+            📖 大士感应篇 <span>14集</span>
         </a>
 
         <a href="这里放有声书Playlist链接" target="_blank" class="video-item">
-            🎧 有声书
+            🎧 有声书 <span>13集</span>
         </a>
 
         <a href="楞严经Playlist链接" target="_blank" class="video-item">
-            🎧 楞严经（4）
+            🎧 楞严经 <span>4集</span>
         </a>
 
         <a href="这里放恭诵圣号Playlist链接" target="_blank" class="video-item">
-            🔔 恭诵圣号／梵音
+            🔔 恭诵圣号／梵音 <span>4集</span>
         </a>
 
         <a href="这里放书籍介绍Playlist链接" target="_blank" class="video-item">
-            📚 书籍介绍（8）
+            📚 书籍介绍 <span>8集</span>
         </a>
 
     </div>
