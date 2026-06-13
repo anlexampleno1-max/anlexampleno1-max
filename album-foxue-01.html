@@ -1,16 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>佛教文化网站</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  
+<style>
+:root {
+  --red: #B86058;
+  --brown: #484030;
+  --cream: #F0E8C8;
+  --grey: #989080;
+  --khaki: #C8B898;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ma Shan Zheng", cursive;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.8;
+  
+  overflow-x: hidden;
+}
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:25px;
+}
+
+.event-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  padding-bottom:25px;
+  text-align:left;
+}
+
+.event-info{
+    margin-top:18px;
+    padding:18px;
+    text-align:left;
+}
+
+.event-info h4{
+    color:#C9A227;
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+.event-info p{
+    font-size:16px;
+    line-height:1.8;
+    margin:6px 0;
+}
+
+.register-btn{
+    display:block;
+    width:220px;
+    height:70px;
+    line-height:70px;
+    margin:20px auto;
+    background:linear-gradient(135deg,#8C1D18,#B22222);
+    color:#fff !important;
+    padding:0;
+    text-align:center;
+    border-radius:35px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:24px
+    border:2px solid #C9A227;
+    box-shadow:0 0 15px rgba(201,162,39,.4);
+    margin-top:15px;
+}
+
+.register-btn:hover{
+    background:#C9A227;
+    color:#2b241c !important;
+}
+
+.event-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.event-card h3{
+  color:#8C1D18;
+  font-size:26px;
+  margin:22px 0;
+  text-align:center;
+}
+.slide{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s ease;
+background-size:cover;
+background-position:center;
+}
+
+.slide.active{
+  opacity:1;
+  z-index:2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: var(--brown);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+}
+.nav{
+    max-width:1200px;
+    margin:0 auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.logo{
+    flex-shrink:0;
+}
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+    filter:none;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:nowrap;
+}
+
+.logo-left{
+    height:70px;
+    width:auto;
+    filter:none;
+}
+
+.logo-center{
+    height:90px;
+    width:auto;
+    filter:none;
+}
+
+.logo-right{
+    height:70px;
+    width:auto;
+    filter:none;
+}
+
+.nav li{
+    list-style:none;
+}
+
+.nav a{
+    color:#F0E8C8;
+    text-decoration:none;
+    font-size:20px;
+    white-space:nowrap;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:18px;
+}
+
+.logo-left,
+.logo-right{
+    height:70px;
+    width:auto;
+}
+
+.logo-center{
+    height:120px;
+    width:auto;
+}
+
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:none!important;
+}
+  
+@media (max-width: 768px){
+  
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:block!important;
+}
+    .nav{
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+    .logo{
+        width:100%;
+    }
+  
+    .logo img{
+        height:65px;
+        width:auto;
+    }
+
+  .logo-area{
+    width:100%;
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+    padding:0 10px !important;
+    box-sizing:border-box !important;
+}
+
+.logo-left,
+.logo-right{
+    height:65px !important;
+    width:auto !important;
+}
+
+.logo-center{
+    height:65px !important;
+    width:auto !important;
+    max-width:50% !important;
+}
+
+.nav ul{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr)!important;
+    gap:12px!important;
+}
+
+.nav ul li{
+    width:auto !important;
+    max-width:none !important;
+    text-align:center !important;
+}  
+  
+    .nav a{
+        font-size:17px;
+        white-space:nowrap;
+    }
+
+.nav li:last-child{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:3px !important;
+    width:auto;
+    text-align:center;
+}
+  
+.mobile-menu-btn{
+    display:block !important;
+    position:fixed !important;
+    right:16px !important;
+    bottom:22px !important;
+    left:auto !important;
+    top:auto !important;
+    width:56px !important;
+    height:56px !important;
+    font-size:30px !important;
+    color:#fff !important;
+    background:#8C1D18 !important;
+    border:1px solid #C9A227 !important;
+    border-radius:50% !important;
+    padding:0 !important;
+    z-index:99999 !important;
+}
+
+.mobile-search-btn{
+    display:block !important;
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:24px;
+    text-decoration:none;
+    z-index:9999;
+}
+
+#mobileMenu{
+    display:none !important;
+}
+
+#mobileMenu.show{
+    display:block !important;
+}
+  
+}
+  
+.hero {
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content{
+    width:100%;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+
+.hero h1{
+    font-family: "Ma Shan Zheng", cursive;
+    font-size: 56px;
+    color: #B86058;
+    margin-bottom: 20px;
+    letter-spacing: 6px;
+}
+
+.hero p {
+  font-size: 25px;
+  color:#484030;
+  margin-bottom: 35px;
+}
+
+.btn{
+    ...
+}
+
+/* YouTube 按钮 */
+.youtube-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#C9A227;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:16px;
+}
+
+.youtube-btn:hover{
+    background:#A8841E;
+}
+
+.btn:hover {
+  background: var(--white);
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 25px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.about {
+  background: var(--white);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-box {
+  border-left: 6px solid var(--gold);
+  padding: 30px;
+  background: var(--cream);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: var(--white);
+  padding: 35px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--gold);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: var(--red);
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.media {
+  background: TRANSPARENT);
+  color: var(--white);
+}
+
+.media .section-title h2 {
+  color: var(--gold);
+}
+
+.video-box {
+  background: rgba(140,29,24,0);
+  border: 1px solid var(--gold);
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.video-placeholder {
+  height: 280px;
+  border: 2px dashed var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.books {
+  background: var(--cream);
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.book {
+  background: var(--white);
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgba(201,162,39,0.4);
+}
+
+.book-icon {
+  font-size: 48px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.contact {
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info {
+  background: var(--red);
+  color: var(--white);
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.contact-info h3 {
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+form {
+  background: var(--cream);
+  padding: 40px;
+  border-radius: 18px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+textarea {
+  height: 130px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--red);
+  color: var(--gold);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--ink);
+  color: var(--white);
+  text-align: center;
+  padding: 35px 20px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+.nav{
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:flex-end !important;
+}
+
+.nav ul{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:flex-end !important;
+    align-items:center !important;
+    gap:30px !important;
+    list-style:none !important;
+    margin:0 !important;
+    padding:0 !important;
+} 
+  
+@media (max-width: 900px) {
+
+.logo-wrapper{
+    margin-bottom: 3px !important;
+}
+.nav{
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+.nav ul{
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:repeat(3, auto) !important;
+  justify-content:center !important;
+  gap:12px 22px !important;
+  list-style:none !important;
+  padding:0 !important;
+  margin:3px 0 0 !important;
+}
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .about-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .book-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .cards,
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 18px;
+}
+
+@media (min-width:769px){
+
+    .nav ul{
+        margin-left:50px;
+        margin-top:15px;
+    }
+}
+
+@media (min-width:769px){
+ 
+.contact-search{
+    display:inline-flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+    width:auto !important;
+    min-width:180px !important;
+    white-space:nowrap !important;
+}
+
+.contact-search a{
+    display:inline !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    line-height:1 !important;
+}
+}
+  
+.mobile-menu-btn,
+.mobile-search-btn{
+    display:none;
+}  
+
+.news-section{
+    padding:80px 20px;
+    background:#f5edcf;
+    text-align:center;
+}
+
+.news-section h2{
+    font-size:42px;
+    color:#8C1D18;
+}
+
+.news-section .section-subtitle{
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:35px;
+}
+
+.news-card{
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    gap:30px;
+    align-items:center;
+    background:#fff8e6;
+    padding:25px;
+    border-radius:18px;
+}
+
+.news-card img{
+    width:45%;
+    border-radius:14px;
+}
+
+.news-content{
+    text-align:left;
+}
+
+.news-content h3{
+    color:#8C1D18;
+    font-size:28px;
+}
+
+.news-content p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+    .news-card{
+        flex-direction:column;
+    }
+
+    .news-card img{
+        width:100%;
+    }
+
+    .news-content{
+        text-align:center;
+    }
+}
+  
+.search-container{
+    display:none;
+    text-align:center;
+    padding:15px;
+    background:#2b241c;
+}
+
+.search-container.active{
+    display:block;
+}
+
+.search-container input{
+    width:90%;
+    max-width:500px;
+    padding:12px 20px;
+    border-radius:30px;
+    border:2px solid #C9A227;
+    font-size:16px;
+    outline:none;
+}
+  
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+    <img src="LOGO L1.png" class="logo-left">
+
+    <img src="LOGO C12.png" class="logo-center">
+
+    <img src="LOGO R1.png" class="logo-right">
+</div>
+    
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+
+<a class="mobile-search-btn"
+href="javascript:void(0);"
+onclick="toggleSearch()">🔎</a>
+
+<ul id="mobileMenu">
+    
+      <li><a href="index.html">首页</a></li>
+  
+      <li><a href="about.html">关于老师</a></li>
+
+      <li><a href="aboutus.html">关于我们</a></li>
+  
+      <li><a href="events.html">活动专区</a></li>
+  
+      <li><a href="media.html">影音专区</a></li>
+  
+      <li><a href="books.html">书籍专区</a></li>
+  
+      <li class="contact-search">
+        <a href="contact.html">联系我们</a>
+        <a href="javascript:void(0);" onclick="toggleSearch()">🔎</a></li>
+
+    </ul>
+  </nav>
+</header>
+<section id="events">
 <h1>国学讲座</h1>
 
 <div class="gallery-grid">
-  <img src="shuzhan 1.jpg">
-  <img src="shuzhan 2.jpg">
-  <img src="shuzhan 3.jpg">
-  <img src="shuzhan 4.jpg">
-  <img src="shuzhan 5.jpg">
-  <img src="shuzhan 6.jpg">
-  <img src="shuzhan 7.jpg">
-  <img src="shuzhan 8.jpg">
+  <img src="shuzhan 1.jpeg">
+  <img src="shuzhan 2.jpeg">
+  <img src="shuzhan 3.jpeg">
+  <img src="shuzhan 4.jpeg">
+  <img src="shuzhan 5.jpeg">
+  <img src="shuzhan 6.jpeg">
+  <img src="shuzhan 7.jpeg">
+  <img src="shuzhan 8.jpeg">
 
   <video controls>
     <source src="videos/guoxue1.mp4" type="video/mp4">
   </video>
 </div>
+</section>
+</body>
+</html>
