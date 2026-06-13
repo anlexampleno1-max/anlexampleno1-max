@@ -746,6 +746,29 @@ footer span {
     font-size:16px;
     outline:none;
 }
+
+.album-card img,
+.event-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-grid img,
+.gallery-grid video{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    border-radius:12px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:15px;
+}
   
 </style>
 </head>
@@ -790,7 +813,7 @@ onclick="toggleSearch()">🔎</a>
   </nav>
 </header>
 <section id="events">
-<h1>国学讲座</h1>
+<h1>佛学讲座</h1>
 
 <div class="gallery-grid">
   <img src="shuzhan 1.jpeg">
