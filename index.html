@@ -23,13 +23,22 @@
 }
 
 body {
-  font-family: "Ma Shan Zheng", cursive;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.8;
-  
-  overflow-x: hidden;
+    font-family:'Noto Serif SC', serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    overflow-x: hidden;
 }
+
+h1, h2, .section-title, .banner-title {
+    font-family:'Zhi Mang Xing', cursive;
+    letter-spacing:4px;
+}
+
+button, .btn, .report-btn, .register-btn {
+    font-family:'Ma Shan Zheng', cursive;
+}
+  
 .event-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -482,15 +491,19 @@ section {
 }
 
 .section-title h2 {
-  font-size: 38px;
-  color: var(--red);
-  margin-bottom: 12px;
+    font-family:'Zhi Mang Xing', cursive;
+    font-size:46px;
+    color:var(--red);
+    margin-bottom:12px;
+    font-weight:normal;
+    letter-spacing:4px;
 }
 
 .section-title span {
-  color: var(--gold);
-  font-size: 18px;
-  letter-spacing: 3px;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 .about {
@@ -805,8 +818,11 @@ footer span {
 }
 
 .news-section h2{
+    font-family:'Zhi Mang Xing', cursive;
     font-size:42px;
     color:#8C1D18;
+    font-weight:normal;
+    letter-spacing:4px;
 }
 
 .news-section .section-subtitle{
@@ -997,6 +1013,12 @@ footer span {
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#081a45">
 <link rel="apple-touch-icon" href="logo-icon2.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   
 </head>
 
