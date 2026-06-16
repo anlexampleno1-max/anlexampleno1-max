@@ -774,20 +774,46 @@ footer span {
   margin-bottom: 35px;
 }
 
+.teacher-tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  border-bottom: 1px solid #c8b898;
+  padding-top: 10px;
+}
+
 .teacher-tab {
-  border: 1px solid #C9A227;
+  width: 120px;
+  height: 90px;
+  border: 1px solid #c8b898;
+  border-bottom: none;
   background: #fffaf0;
   color: #8C1D18;
-  padding: 12px 22px;
-  font-size: 18px;
-  border-radius: 8px;
+  font-size: 24px;
+  line-height: 1.3;
   cursor: pointer;
   font-family: inherit;
+  position: relative;
+}
+
+.teacher-tab::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, transparent 50%, #f8f1dc 50%);
+  border-left: 1px solid #c8b898;
 }
 
 .teacher-tab.active {
-  background: #8C1D18;
-  color: white;
+  color: #8C1D18;
+  background: #fffaf0;
+  font-weight: bold;
 }
 
 .teacher-content {
@@ -819,6 +845,32 @@ footer span {
   font-size: 22px;
   line-height: 2;
   text-align: left;
+}
+
+.teacher-tab-row {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.teacher-tab-row .teacher-tabs {
+  flex: 1;
+  margin: 0;
+}
+
+.teacher-aa {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #c8b898;
+  border-radius: 14px;
+  color: #b8a77f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 12px;
 }
   
 </style>
@@ -868,13 +920,18 @@ onclick="toggleSearch()">🔎</a>
   <h1 class="teacher-title">關於老師</h1>
   <p class="teacher-subtitle">ABOUT TEACHER</p>
 
+  <div class="teacher-tab-row">
+
   <div class="teacher-tabs">
-    <button class="teacher-tab active" onclick="showTeacherTab('divination', this)">占卜數術</button>
-    <button class="teacher-tab" onclick="showTeacherTab('martial', this)">道家武術</button>
-    <button class="teacher-tab" onclick="showTeacherTab('culture', this)">文化傳承</button>
-    <button class="teacher-tab" onclick="showTeacherTab('tea', this)">茶藝收藏</button>
+    <button class="teacher-tab active" onclick="showTeacherTab('divination', this)">占卜<br>數術</button>
+    <button class="teacher-tab" onclick="showTeacherTab('martial', this)">道家<br>武術</button>
+    <button class="teacher-tab" onclick="showTeacherTab('culture', this)">文化<br>傳承</button>
+    <button class="teacher-tab" onclick="showTeacherTab('tea', this)">茶藝<br>收藏</button>
   </div>
 
+  <div class="teacher-aa">Aa</div>
+
+</div>
   <div id="divination" class="teacher-content active">
     <img src="tilik.jpg" alt="占卜數術">
     <h2>占卜數術</h2>
