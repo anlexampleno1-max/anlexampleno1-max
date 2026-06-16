@@ -785,11 +785,12 @@ footer span {
 }
 
 .teacher-tab {
-  width: 88px;
-  height: 68px;
-  flex: 0 0 88px;
+  width: 58px;
+  height: 90px;
+  flex: 0 0 58px;
   border: 1px solid #c8b898;
   border-bottom: none;
+  border-radius:12px 12px 0 0;
   background: #fffaf0;
   color: #8C1D18;
   font-size: 20px;
@@ -799,21 +800,11 @@ footer span {
   position: relative;
 }
 
-.teacher-tab::after {
-  content: "";
-  position: absolute;
-  right: -1px;
-  bottom: -1px;
-  width: 18px;
-  height: 18px;
-  background: #f8f1dc;
-  border-left: 1px solid #c8b898;
-  transform: skewY(-45deg);
-  transform-origin: bottom right;
-}
-
 .teacher-tab.active {
-  font-weight: bold;
+    background: #8C1D18;
+    color: white;
+    font-weight: bold;
+    border-color: #8C1D18;
 }
 
 .teacher-aa {
