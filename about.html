@@ -746,6 +746,80 @@ footer span {
     font-size:16px;
     outline:none;
 }
+
+.teacher-section {
+  background: #f8f1dc;
+  padding: 70px 25px;
+  text-align: center;
+}
+
+.teacher-title {
+  color: #8C1D18;
+  font-size: 42px;
+  letter-spacing: 6px;
+  margin-bottom: 5px;
+}
+
+.teacher-subtitle {
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 35px;
+}
+
+.teacher-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.teacher-tab {
+  border: 1px solid #C9A227;
+  background: #fffaf0;
+  color: #8C1D18;
+  padding: 12px 22px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.teacher-tab.active {
+  background: #8C1D18;
+  color: white;
+}
+
+.teacher-content {
+  display: none;
+  max-width: 760px;
+  margin: auto;
+  background: #fffaf0;
+  padding: 28px;
+  border-radius: 22px;
+}
+
+.teacher-content.active {
+  display: block;
+}
+
+.teacher-content img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 25px;
+}
+
+.teacher-content h2 {
+  color: #8C1D18;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.teacher-content p {
+  font-size: 22px;
+  line-height: 2;
+  text-align: left;
+}
   
 </style>
 </head>
@@ -789,48 +863,51 @@ onclick="toggleSearch()">🔎</a>
     </ul>
   </nav>
 </header>
-<section id="news" class="news-section">
-    <h2>关于老师</h2>
-    <p class="section-subtitle">ABOUT TEACHER</p>
+<section class="teacher-section">
 
-    <div class="news-card">
-        <img src="tilik.jpg" alt="关于老师">
+  <h1 class="teacher-title">關於老師</h1>
+  <p class="teacher-subtitle">ABOUT TEACHER</p>
 
-        <div class="news-content">
-            <h3>占卜数术</h3>
-            <p>
+  <div class="teacher-tabs">
+    <button class="teacher-tab active" onclick="showTeacherTab('divination', this)">占卜數術</button>
+    <button class="teacher-tab" onclick="showTeacherTab('martial', this)">道家武術</button>
+    <button class="teacher-tab" onclick="showTeacherTab('culture', this)">文化傳承</button>
+    <button class="teacher-tab" onclick="showTeacherTab('tea', this)">茶藝收藏</button>
+  </div>
+
+  <div id="divination" class="teacher-content active">
+    <img src="tilik.jpg" alt="占卜數術">
+    <h2>占卜數術</h2>
+    <p>
                 王蕰老師，一位深諳古典美学的艺术创作者；一位古董艺术收藏家；一位雅好
 品茗的茶艺家，曾是台湾早期开创茶艺文化先进之一，共创立三家当代茶艺文化中
 心的品茗家；一位精通天文历算、陰陽數術的追求者，精通及了解各類失傳的命理
 占卜之學，包括《易經》、占星學、塔羅牌占卜和奇門遁甲，還有各類卜算
 法……</p>
-          </div>
-      
-        <img src="kungfu.jpg" alt="关于老师">
+  </div>
 
-        <div class="news-content">
-            <h3>道家武术</h3>
-            <p>
+  <div id="martial" class="teacher-content">
+    <img src="kungfu.jpg" alt="道家武術">
+    <h2>道家武術</h2>
+    <p>
                 一位修學各路門派武學的功夫愛好者，從 14 歲起追隨道家師父修學形意、
 八卦、太極拳、螳螂拳、鶴拳、少林彈腿、槍、棍、流星錘……各家流派武學</p>
-          </div>
+  </div>
 
-        <img src="culture.jpg" alt="关于老师">
-
-        <div class="news-content">
-            <h3>传统音乐</h3>
-            <p>
+  <div id="culture" class="teacher-content">
+    <img src="culture.jpg" alt="传统音乐">
+    <h2>传统音乐</h2>
+    <p>
                 一位致力保存傳統音樂薪傳的倡導者，創辦國樂-樂府雅韻和南管樂社-梵音雅集。
 為了承續宇宙繼起生命，有使命地開辦創立了許多機構，包含：中國人文生命
 科學協會、轉化創意工作室有限公司、生命力文創教育基金會、中華度眾協會、薄
 伽梵有限公司，以及拾慧文化創意有限公司。</p>
-          </div>
+  </div>
 
-        <img src="buddha.jpg" alt="关于老师">
-
-        <div class="news-content">
-            <h3>宗教</h3>
-            <p>
+  <div id="tea" class="teacher-content">
+    <img src="buddha.jpg" alt="宗教">
+    <h2>宗教</h2>
+    <p>
                 他，更是一位傳承佛教八宗思想的在家修士──老師擁有來自各派傳承，從印度、中
 國、不丹、尼泊爾諸尊貴導師獲得口訣傳承，足跡踏遍美國、中國、澳洲和歐洲等
 不同地方，傳授學生上萬人遍及海外二十五國家，再傳學生為數甚眾。在尋訪心靈
@@ -855,8 +932,34 @@ onclick="toggleSearch()">🔎</a>
 靈枷鎖的配方良藥，針對現代不同人的需求給予對症下藥的妙方。這兩年更是致力
 於寫作，希望能藉由書籍出版、網路傳播的力量，跨越國界地幫助更深更廣的有緣
 人，相信終有一天世界上的人們，能夠在每個心靈的角落找到屬於自己的淨土。</p>
-          </div>
-      </div>
+  </div>
+
 </section>
+
+<script>
+function showTeacherTab(tabId, button){
+
+    const contents =
+    document.querySelectorAll('.teacher-content');
+
+    const tabs =
+    document.querySelectorAll('.teacher-tab');
+
+    contents.forEach(content=>{
+        content.classList.remove('active');
+    });
+
+    tabs.forEach(tab=>{
+        tab.classList.remove('active');
+    });
+
+    document
+        .getElementById(tabId)
+        .classList.add('active');
+
+    button.classList.add('active');
+}
+</script>
+  
 </body>
 </html>
