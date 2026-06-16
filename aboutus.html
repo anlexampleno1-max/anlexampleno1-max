@@ -789,16 +789,28 @@ onclick="toggleSearch()">🔎</a>
     </ul>
   </nav>
 </header>
-<section id="news" class="news-section">
+<section id="about-us" class="news-section">
     <h2>关于我们</h2>
     <p class="section-subtitle">ABOUT US</p>
 
     <div class="news-card">
         <img src="yuanqi.jpg" alt="关于我们">
 
-        <div class="news-content">
-            <h3>缘起</h3>
-            <p>
+    <div class="teacher-tab-row">
+
+  <div class="teacher-tabs">
+    <button class="teacher-tab active" onclick="showAboutTab('origin', this)">缘起</button>
+    <button class="teacher-tab" onclick="showAboutTab('idea', this)">理念</button>
+    <button class="teacher-tab" onclick="showAboutTab('purpose', this)">宗旨</button>
+    <button class="teacher-tab" onclick="showAboutTab('team', this)">团队</button>
+  </div>
+
+</div>
+
+<div id="origin" class="teacher-content active">
+  <img src="yuanqi.jpg" alt="缘起">
+  <h2>缘起</h2>
+  <p>
                 佛陀以一大事因緣故，出现於世，夜睹明星悟道，在人世说法四十九载，随机设化，开示种种方便法门，
 究其根本不过了知一切众生具有如來智慧德相，但以妄想执著不能证得。逮明帝梦金人、白马负经西來，又为我震旦华人
 受佛薰教之始，历百朝千代而内化為我华人文化之血脉，「家家阿弥陀，戶戶观世音」，无论天涯海角、寰宇内外，梵唱清
@@ -818,32 +830,45 @@ onclick="toggleSearch()">🔎</a>
 王薀老师之殊胜传承，为大马佛子提供一個安心学佛修法，宏扬正法佛教的道场；並藉此推广佛法，净化人心，普渡众生；期
 能发扬佛陀教义，同生极乐净土。
             </p>
-        </div>
+</div>
 
-       <img src="zongzhi.jpg" alt="关于我们">
-
-        <div class="news-content">
-            <h3>设立宗旨</h3>
-            <p>
+<div id="purpose" class="teacher-content">
+  <img src="zongzhi.jpg" alt="宗旨">
+  <h2>宗旨</h2>
+  <p>
                 (一)弘扬佛陀正法，同生极乐净土。
                 (二)奉行五戒十善，利乐有情众生。
                 (三)创建正信道场，广积福德资粮。
                 (四)佛法融入生活，净化五浊人心。
                 (五)推动慈善关怀，提升人文素养。
             </p>
-        </div>
+</div>
 
-        <img src="yuanjing.jpg" alt="关于我们">
-
-        <div class="news-content">
-            <h3>愿景/目标</h3>
-            <p>
+<div id="team" class="teacher-content">
+  <img src="yuanjing.jpg" alt="愿景/目标">
+  <h2>愿景/目标</h2>
+  <p>
                 (一)愿佛陀正法遍化大马，处处得闻安乐法音。
                 (二)愿智慧善巧广度同参，时时共沾殊妙法喜。
                 (三)愿安乐之行普照十方，心心接引传灯无尽
             </p>
-        </div>
+</div>
+        
     </div>
 </section>
+
+<script>
+function showAboutTab(tabId, button){
+  const contents = document.querySelectorAll('#about-us .teacher-content');
+  const tabs = document.querySelectorAll('#about-us .teacher-tab');
+
+  contents.forEach(content => content.classList.remove('active'));
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+  button.classList.add('active');
+}
+</script>
+  
 </body>
 </html>
