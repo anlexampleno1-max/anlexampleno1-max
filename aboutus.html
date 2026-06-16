@@ -746,6 +746,28 @@ footer span {
     font-size:16px;
     outline:none;
 }
+
+.teacher-content {
+  display: none;
+  width: 92%;
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fffaf0;
+  padding: 28px;
+  border-radius: 22px;
+}
+
+.teacher-content.active {
+  display: block;
+}
+
+.teacher-content img {
+  width: 100%;
+  max-width: 620px;
+  display: block;
+  margin: 0 auto 25px;
+  border-radius: 18px;
+}
   
 </style>
 </head>
@@ -797,8 +819,8 @@ onclick="toggleSearch()">🔎</a>
 
   <div class="teacher-tabs">
     <button class="teacher-tab active" onclick="showAboutTab('origin', this)">缘起</button>
-    <button class="teacher-tab" onclick="showAboutTab('purpose', this)">宗旨</button>
-    <button class="teacher-tab" onclick="showAboutTab('team', this)">愿景/目标</button>
+    <button class="teacher-tab" onclick="showAboutTab('idea', this)">宗旨</button>
+    <button class="teacher-tab" onclick="showAboutTab('purpose', this)">愿景</button>
   </div>
 
 </div>
