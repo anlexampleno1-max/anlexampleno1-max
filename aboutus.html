@@ -768,6 +768,35 @@ footer span {
   margin: 0 auto 25px;
   border-radius: 18px;
 }
+
+.teacher-tab {
+  width: 58px;
+  height: 90px;
+  flex: 0 0 58px;
+  border: 1px solid #c8b898;
+  border-bottom: none;
+  border-radius:12px 12px 0 0;
+  background: #fffaf0;
+  color: #8C1D18;
+  font-size: 20px;
+  line-height: 1.25;
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.teacher-tab.active {
+    background: #8C1D18;
+    color: white;
+    font-weight: bold;
+    border-color: #8C1D18;
+}
   
 </style>
 </head>
@@ -817,11 +846,24 @@ onclick="toggleSearch()">🔎</a>
 
     <div class="teacher-tab-row">
 
-  <div class="teacher-tabs">
-    <button class="teacher-tab active" onclick="showAboutTab('origin', this)">缘起</button>
-    <button class="teacher-tab" onclick="showAboutTab('purpose', this)">宗旨</button>
-    <button class="teacher-tab" onclick="showAboutTab('team', this)">愿景</button>
-  </div>
+    <div class="teacher-tabs">
+
+        <button class="teacher-tab active"
+        onclick="showAboutTab('origin', this)">
+        缘起
+        </button>
+
+        <button class="teacher-tab"
+        onclick="showAboutTab('idea', this)">
+        宗旨
+        </button>
+
+        <button class="teacher-tab"
+        onclick="showAboutTab('purpose', this)">
+        愿景
+        </button>
+
+    </div>
 
 </div>
 
