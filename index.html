@@ -1027,6 +1027,45 @@ footer span {
     letter-spacing:4px;
     text-align:center;
 }
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding: 45px 20px 35px;
+    background: #f6efd2;
+}
+
+.quick-item {
+    text-align: center;
+    text-decoration: none;
+    width: 140px;
+}
+
+.quick-circle {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background: #f4eadc;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.quick-circle img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.quick-item h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #6d4c2f;
+    letter-spacing: 4px;
+}
   
 </style>
 
@@ -1161,21 +1200,21 @@ style="background-image:url('6.png')">
 
 </div>
   
-<section class="home-feature-cards">
+<section class="quick-links">
 
-    <div class="feature-card">
-        <a href="news.html">
-            <img src="moment.jpg" alt="最新动态">
-        </a>
-        <h3>最新动态</h3>
+  <a href="news.html" class="quick-item">
+    <div class="quick-circle">
+      <img src="moment.jpg" alt="最新动态">
     </div>
+    <h3>最新动态</h3>
+  </a>
 
-    <div class="feature-card">
-        <a href="class.html">
-            <img src="class.jpg" alt="日常活动">
-        </a>
-        <h3>日常活动</h3>
+  <a href="class.html" class="quick-item">
+    <div class="quick-circle">
+      <img src="class.jpg" alt="日常活动">
     </div>
+    <h3>日常活动</h3>
+  </a>
 
 </section>
 
