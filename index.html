@@ -1241,22 +1241,20 @@ setInterval(() => {
 }, 5000);
 
 let startX = 0;
-let endX = 0;
 
-const banner = document.querySelector(".banner");
-
-banner.addEventListener("touchstart", function(e) {
+document.addEventListener("touchstart", function(e) {
     startX = e.touches[0].clientX;
 });
 
-banner.addEventListener("touchend", function(e) {
-    endX = e.changedTouches[0].clientX;
+document.addEventListener("touchend", function(e) {
+    let endX = e.changedTouches[0].clientX;
+    let distance = startX - endX;
 
-    if (startX - endX > 50) {
+    if (distance > 50) {
         changeSlide(1);
     }
 
-    if (endX - startX > 50) {
+    if (distance < -50) {
         changeSlide(-1);
     }
 });
